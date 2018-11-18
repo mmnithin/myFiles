@@ -1,0 +1,290 @@
+{%extends 'layout.html'%}
+{%block content%}
+<br>
+
+<div class="row">
+    <div class="col-sm-4">
+            <div class="jumbotron border border-primary">
+
+               
+                    <center>
+    
+                            <input type="text" name="title" class="form-control" placeholder="My Title" >
+                    </center>
+                    <br>
+                    <br>
+                    FILL IN YOUR DOCUMENT
+                    <hr>
+                    
+                    
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link active" id="v-pills-persion_info-tab" data-toggle="pill" href="#v-pills-persion_info" role="tab" aria-controls="v-pills-persion_info" aria-selected="true">Persion_info</a>
+                            <a class="nav-link" id="v-pills-summary-tab" data-toggle="pill" href="#v-pills-summary" role="tab" aria-controls="v-pills-summary" aria-selected="false">Summary</a>
+                            <a class="nav-link" id="v-pills-experience-tab" data-toggle="pill" href="#v-pills-experience" role="tab" aria-controls="v-pills-experience" aria-selected="false">Experience</a>
+                            <a class="nav-link" id="v-pills-education-tab" data-toggle="pill" href="#v-pills-education" role="tab" aria-controls="v-pills-education" aria-selected="false">Education</a>
+                          </div>
+                          <br>
+                          <form method="POST" action="/send_personal_info" >
+                          <div class="row">
+                            <div class="col-sm-9">
+      
+                            </div>
+                            <div class="col-sm-3">
+                              <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                          </div>
+                          
+                      
+            </div>
+        </div>
+        <div class="col-8">
+                <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-persion_info" role="tabpanel" aria-labelledby="v-pills-persion_info-tab">
+
+                         
+                                        <div class="jumbotron border border-info">
+                                      <div class="row">
+                                        <div class="col-sm-6">
+                          
+                                          
+                                                <label><h6>First Name*</h6></label><br>
+                                                <input type="text" name="first_name" class="form-control" placeholder="First Name" required >
+                                              </div>
+                                              <div class="col-sm-6">
+                                                  <label><h6>Last Name*</h6></label><br>
+                                                  <input type="text" name="last_name" class="form-control" placeholder="Last Name" required >
+                          
+                                              </div>
+                          
+                                              
+                                        </div>
+                                        <br>
+                                        <label ><h6> Profession</h6></label><br>
+                                        <input type="text" name="profession" class="form-control" placeholder="Profession/Fresher">
+                                      </div>
+                                      
+                                      
+                                       <div class="jumbotron border border-info">
+                                          <label ><h6> Address*</h6>
+                          
+                                          </label>
+                                         <br>
+
+                                         <div class="row">
+                                            
+
+                                           <div class="col-sm-6">
+
+                                             
+                                              
+                                             <input type="text" placeholder="Line 1" name="address_line1" class="form-control">
+    
+                                            
+                                           </div>
+                                           <div class="col-sm-6">
+                                              
+                          
+                                              
+                                              <input type="text" placeholder="Line 2" name="address_line2" class="form-control">
+                                             
+                                           </div>
+                                         </div>
+                                          
+                          
+                                         <div class="row">
+                                           <div class="col-sm-6">
+                          
+                                              <br>
+                                              <label ><h6>Phone*</h6></label><br>
+                                              <input type="number" name="phone" placeholder="Phone Number" class="form-control" required >
+                                              <br>
+                                              
+                                           </div>
+                                           <div class="col-sm-6">
+                          
+                                            <br>
+                                              <label ><h6>E-mail*</h6></label><br>
+                                              <input type="email" name="email" placeholder="Email" class="form-control" required >
+                                              <br>
+                                             
+                                           </div>
+                                         </div>
+                                         <div class="row">
+                                           <div class="col-sm-6">
+                          
+                                              <label><h6>Date of Birth*</h6></label><br>
+                                              <input type="date" name="dob" placeholder="Date of Birth" class="form-control" required >
+                                           </div>
+                                         </div>
+                                         <br>
+                                           
+                                             
+                                                  
+                                           </div>
+                                          
+                          
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-summary" role="tabpanel" aria-labelledby="v-pills-summary-tab">
+
+                          
+
+                          
+                                <div class="card border border-info">
+                                        <br>
+                                        <h4>Summary(Optional)</h4>
+                                        <br>
+                                        <div class="jumbotron border border-primary">
+                                          <textarea class="form-control" placeholder="Enter your resume summary, profile or objective. " name="summary" ></textarea>
+                                          
+                                        </div>
+                                      </div>
+                                      
+                                    
+                                   
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-experience" role="tabpanel" aria-labelledby="v-pills-experience-tab">
+
+                          <div class="jumbotron border border-info">
+                            <br>
+                           <h4>Experience 1 (optional)</h4>
+                           <br>
+                           <div class="row">
+                             <div class="col-sm-6">
+                              
+                           Line 1  <font size="2">(e.g. Position)</font> <br>
+                           <input type="text" class="form-control" name="exp_position1" placeholder="Position" >
+                               
+                             </div>
+                             
+                             <div class="col-sm-6">
+                               
+                                 Line 2  <font size="2">(e.g. company , department,Fresher)*</font> <br>
+                                 <input type="text" class="form-control" placeholder="Company #1/Fresher" name="exp_company1" required>
+                                     
+                             </div>
+               
+                           </div>
+                           <br>
+               
+                           <div class="row">
+                             <div class="col-sm-3">
+                               <b> Year of Experience </b> <br>
+                               From
+                               <input type="month" class="form-control" name="exp_year_from" placeholder="Year of Experience">
+               
+                             </div>
+                             <div class="col-sm-3">
+                               <br>
+                              To
+                               <input type="month" class="form-control" name="exp_year_to" placeholder="Year of Experience">
+               
+                             </div>
+                           </div>
+
+                           <br>
+                           
+
+                          
+                         
+                         
+               
+                         </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-education" role="tabpanel" aria-labelledby="v-pills-education-tab">
+
+                          <div class="jumbotron border border-info">
+                            <h4>School #1</h4>
+                
+                            <br>
+                            <div class="row">
+                              <div class="col-sm-6">
+                                School name (XII)*
+                                <br>
+                                <input type="text" name="school" class="form-control" placeholder="School name" required>
+                
+                              </div>
+                              <div class="col-sm-6">
+                                Percentage 
+                                <br>
+                                <input type="number" name="school_percentage" class="form-control" placeholder="XII Percentage (Not GPA)"required>
+
+                              </div>
+                            </div>
+                
+                              <br>
+                              <div class="row">
+                                  <div class="col-sm-3">
+                                      Date from<br>
+                      
+                                      <input type="month" name="school_date_from" class="form-control"required>
+                      
+                      
+                                    </div>
+                                    <div class="col-sm-3">
+                                        Date to
+                        
+                                        <input type="month" name="school_date_to" class="form-control"required>
+                        
+                        
+                                      </div>
+
+                              </div>
+                              <br>
+                             
+                
+                
+                              <hr>
+                           
+                
+                            <br>
+                
+                            <h4>College #1</h4>
+                
+                            <br>
+                            <div class="row">
+                              <div class="col-sm-6">
+                                College name, major ,minor ,degree
+                                <br>
+                                <input type="text" name="college" class="form-control" placeholder="College name, major ,minor ,degree" required>
+                
+                              </div>
+                              <div class="col-sm-6">
+                                Percentage<br>
+                                <input type="number" name="college_percentage" class="form-control" placeholder="Percentage (Not GPA)" required >
+
+                              </div>
+                            </div>
+                            <br>
+                            <div class="row">
+
+                                <div class="col-sm-3">
+                                    Date from
+                    
+                                    <input type="month" name="college_date_from" class="form-control" required>
+                    
+                    
+                                  </div>
+                                  <div class="col-sm-3">
+                                      Date to
+                      
+                                      <input type="month" name="college_date_to" class="form-control" required>
+                      
+                      
+                                    </div>
+
+                            </div>
+                
+                             
+                
+                
+                            
+                          </form>
+                            
+                          </div>
+                        </div>
+                      </div>
+        </div>
+        </div>
+        
+
+{%endblock%}

@@ -1,0 +1,145 @@
+{%extends 'layout.html'%}
+{%block content%}
+
+<script >
+function myFunction(){
+    window.print();
+}
+</script>
+
+<script>
+$(function test(){
+    var specialElementHandlers ={
+        '#editor' : function (element , renderer) {
+            return true;
+        }
+    };
+
+
+
+
+
+$('#cmd').click(function test(){
+    var doc =new jsPDF();
+    doc.fromHTML(
+        $('#content').html(),15,15,{'width':170,
+        'elementHandlers' : specialElementHandlers
+    },function(){doc.save('sample-file.pdf');}
+    );
+});
+    
+});</script>
+<style>
+header{
+    font-family: cursive;
+
+}
+</style>
+<div class="row">
+    <div class="col-sm-2">
+
+        </div>
+    <div class="col-sm-8">
+            <br>
+            <div class="content">
+
+            
+            
+            <div class="card border border-dark rounded" >
+              <br>
+
+                <div class="container">
+
+                        <h1 class="header">{{passFirstName}} {{passLastName}}</h1>
+                        <h4>{{passProfession}}</h4>
+
+                        <address><b>Contact Address     :</b>&nbsp;&nbsp;&nbsp;{{passAddress1}}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;{{passAddress2}}</address>
+                        <b>Mobile Number    :</b>&nbsp;&nbsp;&nbsp;{{passPhone}}<br>
+                        <b>Email   &nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;:</b> &nbsp;&nbsp;{{passEmail}}<br>
+                        <b>Date of Birth  &nbsp;&nbsp;&nbsp;&nbsp;
+                                :</b>&nbsp;&nbsp;&nbsp;{{passDob}}<br>
+
+                                {{passSummary}}<br><br>
+                                <h3>Experience</h3><hr>
+
+                                
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        {{passDateFrom}}-{{passDateTo}}
+                                       
+                                    </div>
+                                    <div class="col-sm-8">
+
+                                        <h4> <b> {{passExpPosition1}} </b></h4>
+                                        @{{passExpCompany1}}
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                                <br>
+                                <h3>Education</h3><hr>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                    {{passSchoolDateFrom}}-{{passSchoolDateTo}}
+                                       
+                                        
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h4><b>{{passSchool}}</b></h4>
+                                        #{{passSchoolPercentage}}%
+
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        {{passCollegeDateFrom}}-{{passCollegeDateTo}}
+
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h4><b>{{passCollege}}</b></h4>
+                                        #{{passCollegePercentage}}%
+                                    </div>
+                                </div>
+                                
+<br><br>
+
+
+                </div>
+
+                
+                
+               
+
+
+
+                
+            </div>
+        </div>
+        <div class="editor">
+
+        </div>
+
+      
+    </div>
+    <div class="col-sm-2">
+
+            <button id="cmd" onclick="test()" class="btn btn-success">Generate PDF</button>
+    </div>
+    </div>
+      
+    
+
+
+{%endblock%}
